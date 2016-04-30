@@ -683,8 +683,8 @@
                             <rect key="frame" x="1" y="0.0" width="480" height="342"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="UUK-aY-TBp" viewBased="YES" id="nI0-DK-XYF">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="319"/>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="UUK-aY-TBp" viewBased="YES" id="nI0-DK-XYF">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -703,32 +703,39 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView id="9Xv-xk-51I" userLabel="Name Cell View">
-                                                    <rect key="frame" x="1" y="1" width="116" height="17"/>
+                                                <tableCellView id="jiv-BG-mAW" userLabel="Name Cell View">
+                                                    <rect key="frame" x="1" y="1" width="116" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-ag-rfu">
-                                                            <rect key="frame" x="3" y="0.0" width="17" height="17"/>
-                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="RR4-Qs-OTc"/>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55A-hX-KhD">
+                                                            <rect key="frame" x="3" y="45" width="17" height="17"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="LCE-bd-Ias"/>
                                                             <connections>
-                                                                <binding destination="9Xv-xk-51I" name="value" keyPath="objectValue.image" id="8HW-KY-H92"/>
+                                                                <binding destination="jiv-BG-mAW" name="value" keyPath="objectValue.image" id="IgE-jI-y2x"/>
                                                             </connections>
                                                         </imageView>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOn-9q-sPQ" userLabel="Text Field View">
-                                                            <rect key="frame" x="25" y="0.0" width="105" height="17"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="i2V-H4-Hvf">
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qi-Sb-6fL">
+                                                            <rect key="frame" x="25" y="45" width="105" height="17"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Uwi-4Z-BAg">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="9Xv-xk-51I" name="value" keyPath="objectValue.name" id="XbD-Mg-e9p"/>
+                                                                <binding destination="jiv-BG-mAW" name="value" keyPath="objectValue.name" id="4ng-a2-WWC"/>
                                                             </connections>
                                                         </textField>
+                                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-eZ-a5d">
+                                                            <rect key="frame" x="17" y="8" width="96" height="21"/>
+                                                            <sliderCell key="cell" state="on" alignment="left" maxValue="10" doubleValue="10" tickMarkPosition="above" sliderType="linear" id="uNe-sf-nMs"/>
+                                                            <connections>
+                                                                <binding destination="jiv-BG-mAW" name="value" keyPath="objectValue.sliderValue" id="LKm-dm-LWA"/>
+                                                            </connections>
+                                                        </slider>
                                                     </subviews>
                                                     <connections>
-                                                        <outlet property="imageView" destination="MsV-ag-rfu" id="x4e-2z-xPN"/>
-                                                        <outlet property="textField" destination="kOn-9q-sPQ" id="WfP-zk-8CT"/>
+                                                        <outlet property="imageView" destination="55A-hX-KhD" id="sii-wk-qYG"/>
+                                                        <outlet property="textField" destination="9Qi-Sb-6fL" id="rTN-t1-kL4"/>
                                                     </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>
@@ -781,7 +788,7 @@
                             <rect key="frame" x="1" y="31" width="46" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="A22-a0-Deq">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="A22-a0-Deq">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -817,6 +824,7 @@
         </window>
     </objects>
     <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
     </resources>
 </document>

@@ -13,11 +13,13 @@ public class Row: NSObject {
     var name: String = ""
     var explanation: String = ""
     var image: NSImage?
+    var sliderValue: Int
     
-    init( name inName: String, explanation inExplanation: String, image inImageName: String ) {
+    init( name inName: String, explanation inExplanation: String, image inImageName: String, sliderValue inValue: Int ) {
         name = inName
         explanation = inExplanation
         image = NSImage(named: inImageName)
+        sliderValue = inValue;
     }
 }
 
@@ -30,7 +32,7 @@ public class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, 
     var rows: [Row] = []
     
     @IBAction func addNewRow(sender: AnyObject) {
-        rows.append( Row( name: "New", explanation: "New Ex", image: NSImageNameColorPanel) )
+        rows.append( Row( name: "New", explanation: "New Ex", image: NSImageNameColorPanel, sliderValue: 0) )
         rowsTable.reloadData()
     }
 
@@ -43,9 +45,9 @@ public class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, 
     }
 
     public func applicationDidFinishLaunching(aNotification: NSNotification) {
-        rows = [ Row( name: "User", explanation: "One Ex", image: NSImageNameUser),
-                 Row( name: "Folder", explanation: "Two Ex", image: NSImageNameFolder),
-                 Row( name: "Bonjour", explanation: "Three Ex", image: NSImageNameBonjour)
+        rows = [ Row( name: "User", explanation: "One Ex", image: NSImageNameUser, sliderValue: 1),
+                 Row( name: "Folder", explanation: "Two Ex", image: NSImageNameFolder, sliderValue: 2),
+                 Row( name: "Bonjour", explanation: "Three Ex", image: NSImageNameBonjour, sliderValue: 3)
                 ]
         rowsTable.reloadData()
     }
